@@ -8,6 +8,7 @@ import { PatientsDataComponent } from './patients-data/patients-data.component';
 import { RecordComponent } from './record/record.component';
 import { PatientsRecordComponent } from './patients-record/patients-record.component';
 import { NewRecordComponent } from './new-record/new-record.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -23,7 +24,8 @@ import { NewRecordComponent } from './new-record/new-record.component';
     NewRecordComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ]
 })
 export class PagesModule { }
