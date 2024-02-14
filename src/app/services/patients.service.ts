@@ -7,21 +7,26 @@ export class PatientsService {
 
   public menu: any = [
     {
-      titulo: 'Doctors',
-      icono: 'mdi mdi-gauge',
+      title: 'Doctors',
+      icon: 'mdi mdi-gauge',
       submenu: [
-        {
-          titulo: 'Doctor´s Data', url: 'dashboard/doctors-data'
-        }
+        { title: 'Doctor´s Data', url: 'dashboard/doctors-data' }
       ]
     },
     {
-      titulo: 'Doctors',
-      icono: 'mdi mdi-gauge',
+      title: 'Patients',
+      icon: 'mdi mdi-gauge',
       submenu: [
-        {
-          titulo: 'Doctor´s Data', url: 'dashboard/doctors-data'
-        }
+        { title: 'Create Patient', url: 'dashboard/create-patient' },
+        { title: 'Patient´s Data', url: 'dashboard/patients-data' }
+      ]
+    },
+    {
+      title: 'Medical History',
+      icon: 'mdi mdi-gauge',
+      submenu: [
+        { title: 'New Record', url: 'dashboard/new-record' },
+        { title: 'Patient´s Record', url: 'dashboard/patients-record' }
       ]
     }
   ]
