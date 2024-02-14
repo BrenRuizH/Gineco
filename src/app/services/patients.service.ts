@@ -1,9 +1,13 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { apiServer } from '../apiServer';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PatientsService {
+
+  url = apiServer.url;
 
   public menu: any = [
     {
@@ -30,5 +34,9 @@ export class PatientsService {
       ]
     }
   ]
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  postMethod(url: any, body: any) {
+    return this.http.post(`${this.url}${url}`, body);
+  }
 }
