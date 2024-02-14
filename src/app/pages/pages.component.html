@@ -29,19 +29,24 @@
                 </ul>
                 <ul class="navbar-nav my-lg-0">
                     <li class="nav-item dropdown">
+
                         <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img src="../assets/assets/images/users/1.jpg" alt="user" class="profile-pic" />
                         </a>
                         <div class="dropdown-menu dropdown-menu-right animated flipInY">
                             <ul class="dropdown-user">
-                                <li> 
-                                    <a class="waves-effect waves-dark" aria-expanded="false">
-                                        <i ></i>
-                                        <span class="hide-menu"></span>
+                                <li *ngFor="let item of patientsService.menu">
+                                    <a class="waves-effect waves-dark" href="#" aria-expanded="false">
+                                        <i class={{item.icon}}></i>
+                                        <span class="hide-menu">{{item.title}}</span>
                                     </a>
                                     <ul aria-expanded="false">
-                                        <li >
-                                            <a></a>
+                                        <li *ngFor="let subitem of item.submenu">
+                                            <a 
+                                            [routerLink]="subitem.url"
+                                            routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{exact: true}"
+                                            >{{subitem.title}} </a>
                                         </li>
                                     </ul>
                                 </li>
@@ -63,26 +68,7 @@
         <div class="scroll-sidebar">
             <nav class="sidebar-nav">
                 <ul id="sidebarnav">
-                    <li class="user-profile">
-                        <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
-                            <img src="../assets/assets/images/users/profile.png" alt="user" />
-                            <span class="hide-menu"></span>
-                        </a>
-                        <ul aria-expanded="false" class="collapse">
-                            <li>
-                                <a href="javascript:void()">
-                                    Mi perfil
-                                </a>
-                            </li>                                
-                            <li>
-                                <a href="javascript:void()">
-                                    Logout
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
                     <li class="nav-devider"></li>
-                    <li class="nav-small-cap">Indicadores</li>
                     <li *ngFor="let item of patientsService.menu">
                         <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
                             <i class={{item.icon}}></i>
