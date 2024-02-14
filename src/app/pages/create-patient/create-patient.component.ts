@@ -19,9 +19,9 @@ export class CreatePatientComponent {
     formData.append('telpaciente', this.patients.telpaciente);
     formData.append('dirpaciente', this.patients.dirpaciente);
 
-    this.patientsService.postMethod('AltaPaciente.php', formData).subscribe((event: any) =>{
+    this.patientsService.postMethod('altaPaciente.php', formData).subscribe((event: any) =>{
       console.log(event);
-      if (event.status == 'succes') {
+      if (event.status == 'success') {
         
       }
     })

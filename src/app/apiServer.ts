@@ -1,3 +1,3 @@
 export const apiServer = {
-    url: 'http://localhost/medicos_server/'
+    url: 'http://localhost:8080/medicos_server/'
 }
