@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { PatientsService } from 'src/app/services/patients.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class CreatePatientComponent {
 
   patients: any = {};
 
-  constructor (public patientsService: PatientsService) {}
+  constructor (public patientsService: PatientsService, public router: Router) {}
 
   altaPaciente() {
     let formData = new FormData();
@@ -18,11 +19,12 @@ export class CreatePatientComponent {
     formData.append('edadpaciente', this.patients.edadpaciente);
     formData.append('telpaciente', this.patients.telpaciente);
     formData.append('dirpaciente', this.patients.dirpaciente);
+    console.log(formData);
 
     this.patientsService.postMethod('altaPaciente.php', formData).subscribe((event: any) =>{
       console.log(event);
       if (event.status == 'success') {
-        
+        this.router.navigate(['/dashboard/new-record']);
       }
     })
   }
