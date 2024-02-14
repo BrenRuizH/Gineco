@@ -10,23 +10,23 @@ export class PatientsService {
       title: 'Doctors',
       icon: 'mdi mdi-stethoscope',
       submenu: [
-        { title: 'Doctor´s Data', url: 'dashboard/doctors-data' }
+        { title: 'Doctor´s Data', url: 'doctors-data' }
       ]
     },
     {
       title: 'Patients',
       icon: 'mdi mdi-account',
       submenu: [
-        { title: 'Create Patient', url: 'dashboard/create-patient' },
-        { title: 'Patient´s Data', url: 'dashboard/patients-data' }
+        { title: 'Create Patient', url: 'create-patient' },
+        { title: 'Patient´s Data', url: 'patients-data' }
       ]
     },
     {
       title: 'Medical History',
       icon: 'mdi mdi-content-paste',
       submenu: [
-        { title: 'New Record', url: 'dashboard/new-record' },
-        { title: 'Patient´s Record', url: 'dashboard/patients-record' }
+        { title: 'New Record', url: 'new-record' },
+        { title: 'Patient´s Record', url: 'patients-record' }
       ]
     }
   ]
