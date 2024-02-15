@@ -30,10 +30,8 @@ export class CreatePatientComponent {
         formData.append('edadpaciente', this.patients.edadpaciente);
         formData.append('telpaciente', this.patients.telpaciente);
         formData.append('dirpaciente', this.patients.dirpaciente);
-        console.log(formData);
 
         this.patientsService.postMethod('altaPaciente.php', formData).subscribe((event: any) =>{
-          console.log(event);
           Swal.fire("¡Registrado!", "", "success");
           if (event.status == 'success') {
             this.router.navigate(['/dashboard/new-record']);

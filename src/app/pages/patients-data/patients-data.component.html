@@ -1,11 +1,5 @@
 <div class="page-wrapper">
-    <!-- ============================================================== -->
-    <!-- Container fluid  -->
-    <!-- ============================================================== -->
     <div class="container-fluid">            
-        <!-- ============================================================== -->
-        <!-- Start Page Content -->
-        <!-- ============================================================== -->
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
@@ -13,7 +7,8 @@
                         <div class="d-flex animated fadeIn">
                             <div class="mr-auto">
                                 <div class="form-group">                                  
-                                    <h3 class="text-themecolor">Datos de Pacientes</h3> </div>
+                                    <h3 class="text-themecolor">Datos de Pacientes</h3>
+                                </div>
                             </div>
                             <div class="ml-auto">
                                 <div class="form-group">
@@ -36,100 +31,87 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr >
-                                        <td>idpaciente</td>
-                                        <td>nompaciente</td>
-                                        <td>edadpaciente</td>
-                                        <td>telpaciente</td>
-                                        <td>dirpaciente</td>
+                                    <tr *ngFor="let datos of pacientes">
+                                        <td>{{datos.idpaciente}}</td>
+                                        <td>{{datos.nompaciente}}</td>
+                                        <td>{{datos.edadpaciente}}</td>
+                                        <td>{{datos.telpaciente}}</td>
+                                        <td>{{datos.dirpaciente}}</td>
                                         <td> 
-                                            <a  class="btn btn-warning" data-toggle="modal" data-target=".example2-modal-lg"><i class="fa fa-edit"></i></a>
+                                            <a  class="btn btn-warning" data-toggle="modal" data-target=".example2-modal-lg">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
                                         </td>
                                         <td> 
-                                            <a class="btn btn-success"><i class="fa fa-trash"></i></a>
+                                            <a class="btn btn-success">
+                                                <i class="fa fa-trash"></i>
+                                            </a>
                                         </td>
-                                        
                                     </tr>                                        
                                 </tbody>
                             </table>
-
                         </div>                            
                     </div>
                 </div>
             </div>
         </div>        
     </div>
-    <!-- ============================================================== -->
-    <!-- End Container fluid  -->
-    <!-- ============================================================== -->
 </div>
-<!-- ============================================================== -->
-<!-- End Page wrapper  -->
 
 <div class="row">
-<div class="col-md-4">
-<div class="card">
-    <div class="card-body">
-        <!-- sample modal content -->
-        <div class="modal fade example2-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="myLargeModalLabel">Modificar datos del paciente</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    </div>
-                    <div class="card">
-                        <form>
-                        <div class="card-body">
-                                <div class="form-body">
-                                    <div class="row p-t-20">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="control-label">Nombre completo</label>
-                                                <input type="text"  class="form-control"  placeholder="Brenda Torres" >
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="modal fade example2-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="myLargeModalLabel">Modificar datos del paciente</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            </div>
+                            <div class="card">
+                                <form>
+                                    <div class="card-body">
+                                        <div class="form-body">
+                                            <div class="row p-t-20">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Nombre completo</label>
+                                                        <input type="text"  class="form-control"  placeholder="Brenda Torres" >
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Edad</label>
+                                                        <input type="text"  class="form-control"   placeholder="31 años">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Teléfono</label>
+                                                        <input type="text"   class="form-control"   placeholder="(999) 999-9999">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label">Dirección</label>
+                                                        <input type="text"  class="form-control"   placeholder="Av. Venustiano carranza 43, Atlacomulco, Edo. De Méx.">
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <!--/span-->
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="control-label">Edad</label>
-                                                <input type="text"  class="form-control"   placeholder="31 años">
-                                            </div>
+                                        <div class="form-actions">
+                                            <button class="btn btn-success"> <i class="fa fa-check" ></i> Guardar </button> 
                                         </div>
-                                        <!--/span-->
                                     </div>
-                                    <!--/row-->
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label>Teléfono</label>
-                                                <input type="text"   class="form-control"   placeholder="(999) 999-9999">
-                                            </div>
-                                        </div>
-                                        <!--/span-->
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="control-label">Dirección</label>
-                                                <input type="text"  class="form-control"   placeholder="Av. Venustiano carranza 43, Atlacomulco, Edo. De Méx.">
-                                            </div>
-                                        </div>
-                                        <!--/span-->
-                                    </div>
-                                    <!--/row-->                                        
-                                </div>
-                                <div class="form-actions">
-                                    <button class="btn btn-success"> <i class="fa fa-check" ></i> Guardar </button> 
-                                </div>
+                                </form>
+                            </div>
                         </div>
-                        </form>
                     </div>
                 </div>
-                <!-- /.modal-content -->
             </div>
-            <!-- /.modal-dialog -->
         </div>
-        <!-- /.modal -->                                
     </div>
-</div>
-</div>
 </div>

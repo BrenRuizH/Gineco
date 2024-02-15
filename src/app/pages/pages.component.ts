@@ -8,9 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./pages.component.css']
 })
 export class PagesComponent {
-  constructor(public patientsService: PatientsService, public router: Router) {
-    console.log(patientsService.menu);
-  }
+  constructor(public patientsService: PatientsService, public router: Router) {}
 
   logout() {
     this.router.navigateByUrl('/login');

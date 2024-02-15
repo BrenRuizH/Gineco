@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PatientsService } from 'src/app/services/patients.service';
 
 @Component({
@@ -6,19 +6,21 @@ import { PatientsService } from 'src/app/services/patients.service';
   templateUrl: './patients-data.component.html',
   styleUrls: ['./patients-data.component.css']
 })
-export class PatientsDataComponent {
+export class PatientsDataComponent implements OnInit{
 
-  pacientes: any = {};
+  pacientes: any = [];
 
   constructor(private patientsService: PatientsService) {
     this.obtenerPactientes();
   }
 
+  ngOnInit(): void {
+    this.obtenerPactientes();
+  }
+
   obtenerPactientes() {
     this.patientsService.getMethod('ObtenerPacientes.php').subscribe((data) => {
-      console.log(data);
       this.pacientes = data.document;
-      console.log(this.pacientes);
     })
   }
 }
