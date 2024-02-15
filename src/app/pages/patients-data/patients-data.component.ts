@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PatientsService } from 'src/app/services/patients.service';
 
 @Component({
   selector: 'app-patients-data',
@@ -7,4 +8,17 @@ import { Component } from '@angular/core';
 })
 export class PatientsDataComponent {
 
+  pacientes: any = {};
+
+  constructor(private patientsService: PatientsService) {
+    this.obtenerPactientes();
+  }
+
+  obtenerPactientes() {
+    this.patientsService.getMethod('ObtenerPacientes.php').subscribe((data) => {
+      console.log(data);
+      this.pacientes = data.document;
+      console.log(this.pacientes);
+    })
+  }
 }
