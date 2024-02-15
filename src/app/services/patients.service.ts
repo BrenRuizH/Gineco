@@ -44,4 +44,8 @@ export class PatientsService {
   getMethod(url: any): Observable<any> {
     return this.http.get(`${this.url}${url}`);
   }
+
+  seleccionarPaciente(idpaciente: number) {
+    return this.http.get(`${this.url}SeleccionarPaciente.php?idpaciente=${idpaciente}`);
+  }
 }
