@@ -41,7 +41,5 @@ export class CreatePatientComponent {
         Swal.fire("Ups!", "", "info");
       }
     });
-
-    
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PatientsService } from 'src/app/services/patients.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-patients-data',
@@ -28,7 +29,36 @@ export class PatientsDataComponent implements OnInit{
   seleccionarPaciente(idpaciente:any) {
     this.patientsService.seleccionarPaciente(idpaciente).subscribe((resp: any) => {
       this.paciente = resp[0];
-      console.log(this.paciente);
     })
+  }
+
+  editarPaciente() {
+    Swal.fire({
+      title: "¿Desea editar al paciente?",
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: "Editar",
+      denyButtonText: `No acepto`
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        
+        let formData = new FormData();
+        formData.append('nompaciente', this.paciente.nompaciente);
+        formData.append('edadpaciente', this.paciente.edadpaciente);
+        formData.append('telpaciente', this.paciente.telpaciente);
+        formData.append('dirpaciente', this.paciente.dirpaciente);
+        formData.append('idpaciente', this.paciente.idpaciente);
+
+        this.patientsService.postMethod('EditarPaciente.php', formData).subscribe((event: any) =>{
+          Swal.fire("¡Editado!", "", "success");
+          if (event.status == 'success') {
+            this.obtenerPactientes();
+          }
+        })
+      } else if (result.isDenied) {
+        Swal.fire("Ups!", "", "info");
+      }
+    });
   }
 }

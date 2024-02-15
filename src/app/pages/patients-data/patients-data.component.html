@@ -100,10 +100,15 @@
                                                         <input type="text"  class="form-control" name="dirpaciente" [(ngModel)]="paciente.dirpaciente" placeholder="Av. Venustiano carranza 43, Atlacomulco, Edo. De Méx.">
                                                     </div>
                                                 </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <input type="text"  class="form-control" name="idpaciente" [(ngModel)]="paciente.idpaciente" placeholder="1" hidden>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="form-actions">
-                                            <button class="btn btn-success"> <i class="fa fa-check" ></i> Guardar </button> 
+                                            <button class="btn btn-success" (click)="editarPaciente();"> <i class="fa fa-check" ></i> Guardar </button> 
                                         </div>
                                     </div>
                                 </form>
