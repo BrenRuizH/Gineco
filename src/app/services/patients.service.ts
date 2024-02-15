@@ -48,4 +48,8 @@ export class PatientsService {
   seleccionarPaciente(idpaciente: number) {
     return this.http.get(`${this.url}SeleccionarPaciente.php?idpaciente=${idpaciente}`);
   }
+
+  eliminarPaciente(idpaciente: number) {
+    return this.http.get(`${this.url}EliminarPaciente.php?idpaciente=${idpaciente}`);
+  }
 }
