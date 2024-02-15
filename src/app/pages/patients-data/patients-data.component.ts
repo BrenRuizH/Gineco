@@ -61,4 +61,27 @@ export class PatientsDataComponent implements OnInit{
       }
     });
   }
+
+  eliminarPaciente(idpaciente: any) {
+    Swal.fire({
+      title: "¿Desea eliminar al paciente?",
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: "Eliminar",
+      denyButtonText: `No acepto`
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire("¡Eliminado!", "", "success");
+        this.patientsService.eliminarPaciente(idpaciente).subscribe((resp: any) => {
+          if(resp['resultado'] == 'OK') {
+            console.log('Paciente elimminado');
+            this.obtenerPactientes();
+          }
+        })
+      } else if (result.isDenied) {
+        Swal.fire("Ups!", "", "info");
+      }
+    });
+  }
 }
