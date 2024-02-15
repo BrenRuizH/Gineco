@@ -9,6 +9,7 @@ import { PatientsService } from 'src/app/services/patients.service';
 export class PatientsDataComponent implements OnInit{
 
   pacientes: any = [];
+  paciente: any = {};
 
   constructor(private patientsService: PatientsService) {
     this.obtenerPactientes();
@@ -24,5 +25,10 @@ export class PatientsDataComponent implements OnInit{
     })
   }
 
-  seleccionarPaciente(idpaciente:any) {}
+  seleccionarPaciente(idpaciente:any) {
+    this.patientsService.seleccionarPaciente(idpaciente).subscribe((resp: any) => {
+      this.paciente = resp[0];
+      console.log(this.paciente);
+    })
+  }
 }
