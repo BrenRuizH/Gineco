@@ -23,4 +23,6 @@ export class PatientsDataComponent implements OnInit{
       this.pacientes = data.document;
     })
   }
+
+  seleccionarPaciente(idpaciente:any) {}
 }
