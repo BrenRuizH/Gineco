@@ -166,5 +166,16 @@ export class NewRecordComponent implements OnInit{
       flipH: !this.transform.flipH
     }
   }
+
+  flipVertical(){
+    this.rotateStatus = false;
+    this.flipHorizontalStatus = false;
+    this.flipVerticalStatus = true;
+    this.discardChangesStatus = false;
+    this.transform = {
+      ...this.transform, 
+      flipV: !this.transform.flipV
+    }
+  }
 }
 
