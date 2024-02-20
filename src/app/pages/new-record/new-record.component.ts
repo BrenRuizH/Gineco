@@ -21,6 +21,9 @@ export class NewRecordComponent implements OnInit{
     fechahistorial: this.fecha
   };
 
+  imageChangedEvent: any = '';
+  croppedImage: any = '../../../assets/assets/images/users/2.jpg';
+
   constructor(private patientsService: PatientsService, private router: Router) {}
 
   ngOnInit(): void {
@@ -110,5 +113,10 @@ export class NewRecordComponent implements OnInit{
         Swal.fire("Ups!", "", "info");
       }
     });
+  }
+
+  fileChangeEvent(event: any) {
+    this.imageChangedEvent = event;
+    console.log(this.imageChangedEvent);
   }
 }
