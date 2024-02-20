@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ImageCroppedEvent } from 'ngx-image-cropper';
 import { PatientsService } from 'src/app/services/patients.service';
 import Swal from 'sweetalert2';
+import 'hammerjs';
 
 declare var $: any;
 
@@ -118,5 +120,10 @@ export class NewRecordComponent implements OnInit{
   fileChangeEvent(event: any) {
     this.imageChangedEvent = event;
     console.log(this.imageChangedEvent);
+  }
+
+  imageCropped(event: ImageCroppedEvent) {
+    this.croppedImage = event.base64;
+    console.log(this.croppedImage);
   }
 }
