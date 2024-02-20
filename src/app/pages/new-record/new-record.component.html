@@ -101,7 +101,7 @@
                                     <div class="col-md-12 mb-5 d-flex justify-content-center">
                                         <div class="btn-group" role="group">
                                             <button type="button" (click)="rotate()" class="btn btn-outline-primary" [ngClass]="rotateStatus ? 'active': ''">Rotar</button>
-                                            <button type="button" class="btn btn-outline-primary">Horizontal</button>
+                                            <button type="button" (click)="flipHorizontal()" class="btn btn-outline-primary" [ngClass]="flipHorizontalStatus ? 'active': ''">Horizontal</button>
                                             <button type="button" class="btn btn-outline-primary">Vertical</button>
                                             <button type="button" class="btn btn-outline-danger">Sin Cambios</button>
                                         </div>
@@ -112,8 +112,12 @@
                                         [maintainAspectRatio]="true"
                                         [aspectRatio]="1 / 1"
                                         format="png"
+                                        [containWithinAspectRatio]="true"
+                                        [cropperMinWidth]="5"
+                                        [cropperMinHeight]="5"
                                         [canvasRotation]="0"
                                         (imageCropped)="imageCropped($event)"
+                                        [hideResizeSquares]="false"
                                         [transform]="transform">
                                     </image-cropper>
                                     </div>                                                            
