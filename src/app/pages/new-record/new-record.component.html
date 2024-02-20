@@ -1,24 +1,10 @@
 <div class="page-wrapper">
-    <!-- ============================================================== -->
-    <!-- Container fluid  -->
-    <!-- ============================================================== -->
     <div class="container-fluid animated fadeIn">
-        <!-- ============================================================== -->
-        <!-- Bread crumb and right sidebar toggle -->
-        <!-- ============================================================== -->
         <div class="row page-titles">
             <div class="col-md-5 align-self-center">
                 <h3 class="text-themecolor">Datos del paciente</h3>
             </div>                
         </div>
-        <!-- ============================================================== -->
-        <!-- End Bread crumb and right sidebar toggle -->
-        <!-- ============================================================== -->
-
-        <!-- ============================================================== -->
-        <!-- Start Page Content -->
-        <!-- ============================================================== -->
-
         <div class="row">            
             <div class="col-12">                
                 <form >
@@ -26,9 +12,9 @@
                     <div class="form-group row" >
                         <label for="example-text-input" class="col-2 col-form-label">Nombre</label>
                         <div class="col-5">
-                            <select class="form-control" >
+                            <select class="form-control" name="idpaciente" [(ngModel)]="newhistorial.idpaciente">
                                     <option value="" disabled >Seleccione un nombre</option>
-                                    <option *ngFor="let data of patients">{{data.nompaciente}}</option>
+                                    <option *ngFor="let data of patients" value="{{data.idpaciente}}">{{data.nompaciente}}</option>
                             </select>
                         </div>
                         
@@ -36,21 +22,21 @@
                     <div class="form-group row">
                         <label for="example-search-input" class="col-2 col-form-label">Peso</label>
                         <div class="col-4">
-                            <input class="form-control" type="text"  >
+                            <input class="form-control" type="text" name="pesohistorial" [(ngModel)]="newhistorial.pesohistorial">
                         </div>
                         <label for="example-search-input" class="col-2 col-form-label">Talla</label>
                         <div class="col-4">
-                            <input class="form-control" type="text" >
+                            <input class="form-control" type="text" name="tallahistorial" [(ngModel)]="newhistorial.tallahistorial">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="example-search-input" class="col-2 col-form-label">FrC</label>
                         <div class="col-4">
-                            <input class="form-control" type="text"  >
+                            <input class="form-control" type="text" name="fchistorial" [(ngModel)]="newhistorial.fchistorial">
                         </div>
                         <label for="example-search-input" class="col-2 col-form-label">Temperatura</label>
                         <div class="col-4">
-                            <input class="form-control" type="text"  >
+                            <input class="form-control" type="text" name="frhistorial" [(ngModel)]="newhistorial.frhistorial">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -61,34 +47,34 @@
                         <div class="form-group row">
                             <label for="example-search-input" class="col-10 col-form-label">ANTECEDENTES HEREDOFAMILIARES</label>
                             <div class="col-12">
-                                <input class="form-control" type="text"  >
+                                <input class="form-control" type="text" name="ahhistorial" [(ngModel)]="newhistorial.ahhistorial">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="example-search-input" class="col-10 col-form-label">ANTECEDENTES PERSONALES NO PATOLOGICOS</label>
                             <div class="col-12">
-                                <input class="form-control" type="text"  >
+                                <input class="form-control" type="text" name="apnphistorial" [(ngModel)]="newhistorial.apnphistorial">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="example-search-input" class="col-10 col-form-label">HEMOTIPO</label>
                             <div class="col-12">
-                                <input class="form-control" type="text"  >
+                                <input class="form-control" type="text" name="hemotipohistorial" [(ngModel)]="newhistorial.hemotipohistorial">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="example-search-input" class="col-10 col-form-label">ALERGIAS</label>
                             <div class="col-12">
-                                <input class="form-control" type="text"  >
+                                <input class="form-control" type="text" name="alergiashistorial" [(ngModel)]="newhistorial.alergiashistorial">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label>ANTECEDENTES PERSONALES PATOLOGICOS</label>
-                            <textarea class="form-control" rows="4" ></textarea>
+                            <textarea class="form-control" rows="4" name="apphistorial" [(ngModel)]="newhistorial.apphistorial"></textarea>
                         </div>
 
                         
@@ -97,14 +83,14 @@
                     <div class="form-group row">
                         <label for="example-search-input" class="col-2 col-form-label">CITA PROXIMA</label>
                         <div class="col-10">
-                            <input class="form-control" type="text"  >
+                            <input class="form-control" type="text" name="citahistorial" [(ngModel)]="newhistorial.citahistorial">
                         </div>
                     </div>      
                     <div class="form-group">
                         <label>TRATAMIENTO</label>
-                        <textarea class="form-control" rows="8" ></textarea>
+                        <textarea class="form-control" rows="8" name="diagnostico" [(ngModel)]="newhistorial.diagnostico"></textarea>
                         <div class="col-md-12 mt-5 d-flex justify-content-center">
-                            <button type="button" class="btn btn-primary" >Registrar historial</button>
+                            <button type="button" (click)="altaHistoriarial()" class="btn btn-primary" >Registrar historial</button>
                         </div>
                     </div> 
                                               

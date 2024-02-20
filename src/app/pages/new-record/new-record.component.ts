@@ -8,7 +8,14 @@ import { PatientsService } from 'src/app/services/patients.service';
 })
 export class NewRecordComponent implements OnInit{
   mostrar: boolean = false;
-  patients: any[] = []
+  patients: any[] = [];
+
+  fecha = new Date().getDate() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getFullYear();
+
+  newhistorial: any = {
+    idpaciente: '',
+    fechahistorial: this.fecha
+  };
 
   constructor(private patientsService: PatientsService) {}
 
@@ -21,5 +28,9 @@ export class NewRecordComponent implements OnInit{
       this.patients = data.document;
       console.log(this.patients);
     })
+  }
+
+  altaHistoriarial(){
+    console.log(this.newhistorial);
   }
 }
