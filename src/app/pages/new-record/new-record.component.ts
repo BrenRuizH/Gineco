@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ImageCroppedEvent } from 'ngx-image-cropper';
+import { ImageCroppedEvent, ImageTransform } from 'ngx-image-cropper';
 import { PatientsService } from 'src/app/services/patients.service';
 import Swal from 'sweetalert2';
 import 'hammerjs';
@@ -26,6 +26,11 @@ export class NewRecordComponent implements OnInit{
   imageChangedEvent: any = '';
   croppedImage: any = '../../../assets/assets/images/users/2.jpg';
   myFile: any;
+  rotateStatus: boolean = false;
+  flipHorizontalStatus: boolean = false;
+  flipVerticalStatus: boolean = false;
+  discardChangesStatus: boolean = false;
+  transform: ImageTransform = {};
 
   constructor(private patientsService: PatientsService, private router: Router) {}
 
@@ -137,6 +142,18 @@ export class NewRecordComponent implements OnInit{
         u8arr[n] = bstr.charCodeAt(n);
     }    
     return new File([u8arr], filename, {type:mime});
+  }
+
+  rotate() {
+    this.rotateStatus = true;
+    this.flipHorizontalStatus = false;
+    this.flipVerticalStatus = false;
+    this.discardChangesStatus = false;
+    const newValue = ((this.transform.rotate ?? 0) + 90) % 360;
+    this.transform = {
+      ...this.transform, 
+      rotate:newValue
+    }
   }
 }
 
