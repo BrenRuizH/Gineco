@@ -61,7 +61,7 @@ export class NewRecordComponent implements OnInit{
         this.patientsService.postMethod('NuevoHistorial.php', formData).subscribe((event: any) =>{
           Swal.fire("¡Registrado!", "", "success");
           if (event.status == 'success') {
-            this.router.navigate(['/dashboard/new-record']);
+            this.router.navigate(['/dashboard/patients-record']);
           }
         })
       } else if (result.isDenied) {
