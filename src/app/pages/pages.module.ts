@@ -10,6 +10,7 @@ import { PatientsRecordComponent } from './patients-record/patients-record.compo
 import { NewRecordComponent } from './new-record/new-record.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 
 
@@ -27,7 +28,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    ImageCropperModule
   ]
 })
 export class PagesModule { }
