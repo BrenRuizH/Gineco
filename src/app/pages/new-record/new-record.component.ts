@@ -25,6 +25,7 @@ export class NewRecordComponent implements OnInit{
 
   imageChangedEvent: any = '';
   croppedImage: any = '../../../assets/assets/images/users/2.jpg';
+  myFile: any;
 
   constructor(private patientsService: PatientsService, private router: Router) {}
 
@@ -75,7 +76,6 @@ export class NewRecordComponent implements OnInit{
   getPatients() {
     this.patientsService.getMethod('ObtenerPacientes.php').subscribe((data) => {
       this.patients = data.document;
-      console.log(this.patients);
     })
   }
 
@@ -91,6 +91,7 @@ export class NewRecordComponent implements OnInit{
       if (result.isConfirmed) {
         
         let formData = new FormData();
+        formData.append('file', this.myFile);
         formData.append('pesohistorial', this.newhistorial.pesohistorial);
         formData.append('tallahistorial', this.newhistorial.tallahistorial);
         formData.append('fchistorial', this.newhistorial.fchistorial);
@@ -119,11 +120,23 @@ export class NewRecordComponent implements OnInit{
 
   fileChangeEvent(event: any) {
     this.imageChangedEvent = event;
-    console.log(this.imageChangedEvent);
   }
 
   imageCropped(event: ImageCroppedEvent) {
     this.croppedImage = event.base64;
-    console.log(this.croppedImage);
+    this.myFile = this.dataURLtoFile(this.croppedImage, '../../../assets/assets/images/users/2.jpg');
+  }
+
+  dataURLtoFile(dataurl:any, filename:any) { 
+    let arr = dataurl.split(','),
+        mime = arr[0].match(/:(.*?);/)[1],
+        bstr = atob(arr[1]), 
+        n = bstr.length, 
+        u8arr = new Uint8Array(n);        
+    while(n--){
+        u8arr[n] = bstr.charCodeAt(n);
+    }    
+    return new File([u8arr], filename, {type:mime});
   }
 }
+
