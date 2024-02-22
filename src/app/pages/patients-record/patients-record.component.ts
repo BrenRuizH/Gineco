@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PatientsService } from 'src/app/services/patients.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class PatientsRecordComponent implements OnInit{
 
   newHistoriales: any[] = [];
 
-  constructor(public patientService: PatientsService) {}
+  constructor(public patientService: PatientsService, private router: Router) {}
 
   ngOnInit(): void {
     this.obtenerHistoriales();
@@ -22,5 +23,9 @@ export class PatientsRecordComponent implements OnInit{
       this.newHistoriales = resp;
       console.log(this.newHistoriales);
     })
+  }
+
+  verExpediente(idpaciente: any) {
+    this.router.navigate(['/dashboard/record', idpaciente]);
   }
 }
