@@ -29,7 +29,6 @@ export class NewRecordComponent implements OnInit{
   rotateStatus: boolean = false;
   flipHorizontalStatus: boolean = false;
   flipVerticalStatus: boolean = false;
-  discardChangesStatus: boolean = false;
   transform: ImageTransform = {};
 
   constructor(private patientsService: PatientsService, private router: Router) {}
@@ -148,7 +147,6 @@ export class NewRecordComponent implements OnInit{
     this.rotateStatus = true;
     this.flipHorizontalStatus = false;
     this.flipVerticalStatus = false;
-    this.discardChangesStatus = false;
     const newValue = ((this.transform.rotate ?? 0) + 90) % 360;
     this.transform = {
       ...this.transform, 
@@ -160,7 +158,6 @@ export class NewRecordComponent implements OnInit{
     this.rotateStatus = false;
     this.flipHorizontalStatus = true;
     this.flipVerticalStatus = false;
-    this.discardChangesStatus = false;
     this.transform = {
       ...this.transform, 
       flipH: !this.transform.flipH
@@ -171,7 +168,6 @@ export class NewRecordComponent implements OnInit{
     this.rotateStatus = false;
     this.flipHorizontalStatus = false;
     this.flipVerticalStatus = true;
-    this.discardChangesStatus = false;
     this.transform = {
       ...this.transform, 
       flipV: !this.transform.flipV
