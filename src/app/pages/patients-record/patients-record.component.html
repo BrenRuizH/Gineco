@@ -30,8 +30,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr >
-                        <td>nompaciente</td>                                                                                        
+                    <tr *ngFor="let historiales of newHistoriales">
+                        <td>{{historiales.nompaciente}}</td>                                                                                        
                         <td> 
                             <a class="btn btn-success" ><i class="fa fa-eye"></i></a>
                         </td>
