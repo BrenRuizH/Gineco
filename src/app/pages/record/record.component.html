@@ -1,24 +1,10 @@
 <div class="page-wrapper">
-    <!-- ============================================================== -->
-    <!-- Container fluid  -->
-    <!-- ============================================================== -->
     <div class="container-fluid animated fadeIn">
-        <!-- ============================================================== -->
-        <!-- Bread crumb and right sidebar toggle -->
-        <!-- ============================================================== -->
         <div class="row page-titles">
             <div class="col-md-5 align-self-center">
                 <h3 class="text-themecolor">Expediente </h3>
             </div>
-            
         </div>
-        <!-- ============================================================== -->
-        <!-- End Bread crumb and right sidebar toggle -->
-        <!-- ============================================================== -->
-
-        <!-- ============================================================== -->
-        <!-- Start Page Content -->
-        <!-- ============================================================== -->
         <div class="row">
             <div class="col-12">
                 <div class="card">
@@ -35,10 +21,10 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr >
-                                    <td>nompaciente</td>
-                                        <td>fechahistorial</td>
-                                        <td>citahistorial</td>
+                                    <tr *ngFor="let datos of exp">
+                                        <td >{{datos.nompaciente}}</td>
+                                        <td >{{datos.fechahistorial}}</td>
+                                        <td >{{datos.citahistorial}}</td>
                                         <td> 
                                             <a class="btn btn-warning" data-toggle="modal" data-target=".example3-modal-lg"><i class="fa fa-edit"></i></a>
                                         </td>
@@ -57,19 +43,11 @@
             </div>
         </div>            
     </div>
-    <!-- ============================================================== -->
-    <!-- End Container fluid  -->
-    <!-- ============================================================== -->
 </div>
-<!-- ============================================================== -->
-<!-- End Page wrapper  -->
-<!-- ============================================================== -->
-
 <div class="row">
 <div class="col-md-4">
     <div class="card">
         <div class="card-body">
-            <!-- sample modal content -->
             <div class="modal fade example3-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
@@ -165,11 +143,8 @@
                         </form>
                     </div>
                 </div>
-                <!-- /.modal-content -->
             </div>
-            <!-- /.modal-dialog -->
         </div>
-        <!-- /.modal -->                                
     </div>
 </div>
 </div>
@@ -180,7 +155,6 @@
 <div class="col-md-4">
     <div class="card">
         <div class="card-body">
-            <!-- sample modal content -->
             <div class="modal fade example4-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
@@ -254,12 +228,7 @@
                                                     <label for="example-text-input" class="col-form-label">apphistorial</label>
                                                 </div>
                                             </div>
-                                                                                     
-                                            
                                         </div>
-                                        
-                                       
-                                                                
                                         <div class="form-group row">
                                             <label for="example-search-input" class="col-12 col-form-label">CITA PROXIMA</label>
                                             <div class="col-10">
@@ -287,11 +256,8 @@
                         </form>
                     </div>
                 </div>
-                <!-- /.modal-content -->
             </div>
-            <!-- /.modal-dialog -->
         </div>
-        <!-- /.modal -->                                
     </div>
 </div>
 </div>
