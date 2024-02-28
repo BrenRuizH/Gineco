@@ -62,6 +62,6 @@ export class PatientsService {
   }
 
   seleccionarExpedientes(idhistorial: any) {
-    return this.http.get(`${this.url}SeleccionarExpedientes.php?idhistorial=${idhistorial}`);
+    return this.http.get(`${this.url}SeleccionarExpediente.php?idhistorial=${idhistorial}`);
   }
 }

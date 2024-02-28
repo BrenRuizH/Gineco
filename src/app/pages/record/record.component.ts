@@ -10,6 +10,7 @@ import { PatientsService } from 'src/app/services/patients.service';
 export class RecordComponent implements OnInit{
 
   expedientes: any = {};
+  expediente: any = [];
   exp: any[] = [];
 
   constructor(private patientsService: PatientsService, private activetedRouter: ActivatedRoute) {
@@ -29,5 +30,13 @@ export class RecordComponent implements OnInit{
       this.exp = resp;
       console.log(this.exp);
     });
+  }
+
+  seleccionarExpediente(idhistorial: any) {
+    this.patientsService.seleccionarExpedientes(idhistorial)
+    .subscribe((resp: any) => {
+      this.expediente = resp[0];
+      console.log(this.expediente);
+    })
   }
 }
