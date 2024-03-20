@@ -170,7 +170,7 @@
                                         <div class="form-group row" >
                                             <label id="cajafecha" for="example-search-input" class="col-4 col-form-label">FECHA ELABORADA</label>
                                             <div class="col-4">
-                                                <label for="example-text-input" class="col-form-label">fechahistorial</label>
+                                                <label for="example-text-input" class="col-form-label">{{expediente.fechahistorial}}</label>
                                             </div>                                            
                                         </div>
                                         <div class="table-responsive-lg">
@@ -185,54 +185,54 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr >
-                                                        <td >pesohistorial</td>
-                                                        <td >tallahistorial</td>
-                                                        <td >fchistorial</td>
-                                                        <td >frhistorial</td>
+                                                        <td >{{expediente.pesohistorial}}</td>
+                                                        <td >{{expediente.tallahistorial}}</td>
+                                                        <td >{{expediente.fchistorial}}</td>
+                                                        <td >{{expediente.frhistorial}}</td>
                                                     </tr>       
                                                 </tbody>
                                             </table>                                                
                                         </div>
                                         
                                         <div class="form-group row">
-                                            <button type="button" class=" btn btn-outline-primary">Mostrar Mas Datos</button>
+                                            <button type="button" (click)="mostrar =! mostrar" class=" btn btn-outline-primary">Mostrar Mas Datos</button>
                                         </div>
-                                        <div >                                                
+                                        <div *ngIf="mostrar">                                                
                                             <div class="form-group row">
                                                 <label for="example-text-input" class="col-12 col-form-label">ANTECEDENTES HEREDOFAMILIARES</label>
                                                 <div class="col-12">
-                                                    <label for="example-text-input" class="col-form-label">ahhistorial</label>
+                                                    <label for="example-text-input" class="col-form-label">{{expediente.ahhistorial}}</label>
                                                 </div>
                                             </div>                        
                                             <div class="form-group row">
                                                 <label for="example-search-input" class="col-12 col-form-label">ANTECEDENTES PERSONALES NO PATOLOGICOS</label>
                                                 <div class="col-12">
-                                                    <label for="example-text-input" class="col-form-label">apnphistorial</label>
+                                                    <label for="example-text-input" class="col-form-label">{{expediente.apnphistorial}}</label>
                                                 </div>
                                             </div>                        
                                             <div class="form-group row">
                                                 <label for="example-search-input" class="col-12 col-form-label">HEMOTIPO</label>
                                                 <div class="col-12">
-                                                    <label for="example-text-input" class="col-form-label">hemotipohistorial</label>
+                                                    <label for="example-text-input" class="col-form-label">{{expediente.hemotipohistorial}}</label>
                                                 </div>
                                             </div>                        
                                             <div class="form-group row">
                                                 <label for="example-search-input" class="col-12 col-form-label">ALERGIAS</label>
                                                 <div class="col-12">
-                                                    <label for="example-text-input" class="col-form-label">alergiashistorial</label>
+                                                    <label for="example-text-input" class="col-form-label">{{expediente.alergiashistorial}}</label>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="example-search-input" class="col-12 col-form-label">ANTECEDENTES PERSONALES PATOLOGICOS</label>
                                                 <div class="col-12">
-                                                    <label for="example-text-input" class="col-form-label">apphistorial</label>
+                                                    <label for="example-text-input" class="col-form-label">{{expediente.apphistorial}}</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label for="example-search-input" class="col-12 col-form-label">CITA PROXIMA</label>
                                             <div class="col-10">
-                                                <label for="example-text-input" class="col-form-label">citahistorial</label>
+                                                <label for="example-text-input" class="col-form-label">{{expediente.citahistorial}}</label>
                                             </div>
                                         </div>    
                                         <div class="table-responsive-lg">
@@ -244,7 +244,7 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr class="col-12">
-                                                        <td ><label for="example-search-input" class="col-12 col-form-label">diagnostico</label></td>
+                                                        <td ><label for="example-search-input" class="col-12 col-form-label">{{expediente.diagnostico}}</label></td>
                                                     </tr>                            
                                                 </tbody>
                                             </table>                                                

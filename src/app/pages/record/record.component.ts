@@ -9,6 +9,7 @@ import { PatientsService } from 'src/app/services/patients.service';
 })
 export class RecordComponent implements OnInit{
 
+  mostrar: boolean = false;
   expedientes: any = {};
   expediente: any = [];
   exp: any[] = [];
