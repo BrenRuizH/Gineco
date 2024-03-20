@@ -14,6 +14,8 @@ export class RecordComponent implements OnInit{
   expediente: any = [];
   exp: any[] = [];
 
+  croppedImage: any = '../../../assets/assets/images/users/2.jpg';
+
   constructor(private patientsService: PatientsService, private activetedRouter: ActivatedRoute) {
     this.activetedRouter.params.subscribe(paramas => {
       this.expedientes = paramas['id'];
@@ -37,6 +39,7 @@ export class RecordComponent implements OnInit{
     this.patientsService.seleccionarExpedientes(idhistorial)
     .subscribe((resp: any) => {
       this.expediente = resp[0];
+      this.croppedImage = this.patientsService.url + "images/" + this.expediente.imghistorial + ".jpg";
       console.log(this.expediente);
     })
   }
