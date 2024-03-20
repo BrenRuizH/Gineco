@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ImageCroppedEvent, ImageTransform } from 'ngx-image-cropper';
 import { PatientsService } from 'src/app/services/patients.service';
+import Swal from 'sweetalert2';
 
 declare var $: any;
 
@@ -97,7 +98,32 @@ export class RecordComponent implements OnInit{
     })
   }
 
-  editarExpediente() {}
+  editarExpediente() {
+    let formData = new FormData();
+    formData.append('pesohistorial', this.expediente.pesohistorial);
+    formData.append('tallahistorial', this.expediente.tallahistorial);
+    formData.append('fchistorial', this.expediente.fchistorial);
+    formData.append('frhistorial', this.expediente.frhistorial);
+    formData.append('ahhistorial', this.expediente.ahhistorial);
+    formData.append('apnphistorial', this.expediente.apnphistorial);
+    formData.append('hemotipohistorial', this.expediente.hemotipohistorial);
+    formData.append('alergiashistorial', this.expediente.alergiashistorial);
+    formData.append('apphistorial', this.expediente.apphistorial);
+    formData.append('citahistorial', this.expediente.citahistorial);
+    formData.append('idpaciente', this.expediente.idpaciente);
+    formData.append('fechahistorial', this.expediente.fechahistorial);
+    formData.append('diagnostico', this.expediente.diagnostico);
+    formData.append('file', this.myFile);
+    formData.append('idhistorial', this.expediente.idhistorial);
+
+    this.patientsService.postMethod('EditarExpediente.php', formData)
+      .subscribe((resp: any) => {
+      Swal.fire('Actualizado', '', 'success');
+      if(resp.status == 'success') {
+        this.obtenerExpedientes();
+      }
+    });
+  }
 
   fileChangeEvent(event: any) {
     this.imageChangedEvent = event;
