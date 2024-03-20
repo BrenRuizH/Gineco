@@ -65,60 +65,60 @@
                                         <div class="form-group row">
                                             <label for="example-search-input" class="col-2 col-form-label">Peso</label>
                                             <div class="col-4">
-                                                <input class="form-control" type="text"  >
+                                                <input class="form-control" type="text" name="pesohistorial" [(ngModel)]="expediente.pesohistorial">
                                             </div>
                                             <label for="example-search-input" class="col-2 col-form-label">Talla</label>
                                             <div class="col-4">
-                                                <input class="form-control" type="text"  >
+                                                <input class="form-control" type="text" name="tallahistorial" [(ngModel)]="expediente.tallahistorial">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label for="example-search-input" class="col-2 col-form-label">FrC.</label>
                                             <div class="col-4">
-                                                <input class="form-control" type="text"  >
+                                                <input class="form-control" type="text" name="fchistorial" [(ngModel)]="expediente.fchistorial">
                                             </div>
                                             <label for="example-search-input" class="col-2 col-form-label">Temp. </label>
                                             <div class="col-4">
-                                                <input class="form-control" type="text"  >
+                                                <input class="form-control" type="text" name="frhistorial" [(ngModel)]="expediente.frhistorial">
                                             </div>
                                         </div>
                                                                                 
                                         <div class="form-group row">
-                                            <button class=" btn btn-outline-primary">Mostrar Mas Datos</button>
+                                            <button (click)="mostrar =! mostrar" class="btn btn-outline-primary">Mostrar Mas Datos</button>
                                         </div>
-                                        <div >
+                                        <div *ngIf="mostrar">
                                             
                                             <div class="form-group row">
                                                 <label for="example-search-input" class="col-10 col-form-label">ANTECEDENTES HEREDOFAMILIARES</label>
                                                 <div class="col-12">
-                                                    <input class="form-control" type="text"  >
+                                                    <input class="form-control" type="text" name="ahhistorial" [(ngModel)]="expediente.ahhistorial">
                                                 </div>
                                             </div>
                     
                                             <div class="form-group row">
                                                 <label for="example-search-input" class="col-10 col-form-label">ANTECEDENTES PERSONALES NO PATOLOGICOS</label>
                                                 <div class="col-12">
-                                                    <input class="form-control" type="text"  >
+                                                    <input class="form-control" type="text" name="apnphistorial" [(ngModel)]="expediente.apnphistorial">
                                                 </div>
                                             </div>
                     
                                             <div class="form-group row">
                                                 <label for="example-search-input" class="col-10 col-form-label">HEMOTIPO</label>
                                                 <div class="col-12">
-                                                    <input class="form-control" type="text"  >
+                                                    <input class="form-control" type="text" name="hemotipohistorial" [(ngModel)]="expediente.hemotipohistorial">
                                                 </div>
                                             </div>
                     
                                             <div class="form-group row">
                                                 <label for="example-search-input" class="col-10 col-form-label">ALERGIAS</label>
                                                 <div class="col-12">
-                                                    <input class="form-control" type="text"  >
+                                                    <input class="form-control" type="text" name="alergiashistorial" [(ngModel)]="expediente.alergiashistorial">
                                                 </div>
                                             </div>
                     
                                             <div class="form-group">
                                                 <label>ANTECEDENTES PERSONALES PATOLOGICOS</label>
-                                                <textarea class="form-control" rows="4" name></textarea>
+                                                <textarea class="form-control" rows="4" name="apphistorial" [(ngModel)]="expediente.apphistorial"></textarea>
                                             </div>
                     
                                             
@@ -127,12 +127,12 @@
                                         <div class="form-group row">
                                             <label for="example-search-input" class="col-2 col-form-label">CITA PROXIMA</label>
                                             <div class="col-10">
-                                                <input class="form-control" type="text"  >
+                                                <input class="form-control" type="text" name="citahistorial" [(ngModel)]="expediente.citahistorial">
                                             </div>
                                         </div>      
                                         <div class="form-group">
                                             <label>TRATAMIENTO</label>
-                                            <textarea class="form-control" rows="8" name></textarea>
+                                            <textarea class="form-control" rows="8" name="diagnostico" [(ngModel)]="expediente.diagnostico"></textarea>
                                         </div>                                                                                                   
                                 </div>               
                                 </div>
