@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { ImageCroppedEvent, ImageTransform } from 'ngx-image-cropper';
 import { PatientsService } from 'src/app/services/patients.service';
 import Swal from 'sweetalert2';
+import * as printJS from 'print-js'
+
 
 declare var $: any;
 
@@ -175,5 +177,12 @@ export class RecordComponent implements OnInit{
       ...this.transform, 
       flipV: !this.transform.flipV
     }
+  }
+
+  imprimirReceta() {
+    printJS({
+      printable: 'contdiv',
+      type: 'html'
+    })
   }
 }
