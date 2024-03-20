@@ -32,6 +32,8 @@ export class RecordComponent implements OnInit{
   flipVerticalStatus: boolean = false;
   transform: ImageTransform = {};
 
+  datosReceta: any = {};
+
   constructor(private patientsService: PatientsService, private activetedRouter: ActivatedRoute) {
     this.activetedRouter.params.subscribe(paramas => {
       this.expedientes = paramas['id'];
@@ -184,5 +186,13 @@ export class RecordComponent implements OnInit{
       printable: 'contdiv',
       type: 'html'
     })
+  }
+
+  seleccionarReceta(idhistorial: any) {
+    this.patientsService.seleccionarReceta(idhistorial)
+      .subscribe((resp: any) => {
+        this.datosReceta = resp[0];
+        console.log(this.datosReceta);
+      })
   }
 }
