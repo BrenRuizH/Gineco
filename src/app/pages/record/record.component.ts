@@ -184,8 +184,9 @@ export class RecordComponent implements OnInit{
   imprimirReceta() {
     printJS({
       printable: 'contdiv',
-      type: 'html'
-    })
+      type: 'html',
+      style: '.colores { color: blue; text-align: center; line-height: 1.5; }'
+    });
   }
 
   seleccionarReceta(idhistorial: any) {
