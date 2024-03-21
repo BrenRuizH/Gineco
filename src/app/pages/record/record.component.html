@@ -342,12 +342,14 @@
                                                     </div>
                                                 </div>
                                                 
-                                            <!-- <div class="form-group row" >
-                                                <label id="cajafecha" for="example-search-input" class="col-4 col-form-label">FECHA ELABORADA</label>
-                                                <div class="col-4">
-                                                    <label for="example-text-input" class="col-form-label">{{expediente.fechahistorial}}</label>
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <h4 for="example-text-input" class="col-form-label">Nombre: {{datosReceta.nompaciente}}</h4>
+                                                </div>
+                                                <div class="col-4 align-self-center">
+                                                    <h4 for="example-text-input" class="col-form-label">Fecha Elaborada: {{datosReceta.fechahistorial}}</h4>
                                                 </div>                                            
-                                            </div> -->
+                                            </div>
                                             <div class="table-responsive-lg">
                                                 <table class="table"  >
                                                     <thead >
@@ -360,56 +362,15 @@
                                                     </thead>
                                                     <tbody>
                                                         <tr >
-                                                            <td >{{expediente.pesohistorial}}</td>
-                                                            <td >{{expediente.tallahistorial}}</td>
-                                                            <td >{{expediente.fchistorial}}</td>
-                                                            <td >{{expediente.frhistorial}}</td>
+                                                            <th>{{datosReceta.pesohistorial}}</th>
+                                                            <th>{{datosReceta.tallahistorial}}</th>
+                                                            <th>{{datosReceta.fchistorial}}</th>
+                                                            <th>{{datosReceta.frhistorial}}</th>
                                                         </tr>       
                                                     </tbody>
                                                 </table>                                                
                                             </div>
-                                            
-                                            <div class="form-group row">
-                                                <button type="button" (click)="mostrar =! mostrar" class=" btn btn-outline-primary">Mostrar Mas Datos</button>
-                                            </div>
-                                            <div *ngIf="mostrar">                                                
-                                                <div class="form-group row">
-                                                    <label for="example-text-input" class="col-12 col-form-label">ANTECEDENTES HEREDOFAMILIARES</label>
-                                                    <div class="col-12">
-                                                        <label for="example-text-input" class="col-form-label">{{expediente.ahhistorial}}</label>
-                                                    </div>
-                                                </div>                        
-                                                <div class="form-group row">
-                                                    <label for="example-search-input" class="col-12 col-form-label">ANTECEDENTES PERSONALES NO PATOLOGICOS</label>
-                                                    <div class="col-12">
-                                                        <label for="example-text-input" class="col-form-label">{{expediente.apnphistorial}}</label>
-                                                    </div>
-                                                </div>                        
-                                                <div class="form-group row">
-                                                    <label for="example-search-input" class="col-12 col-form-label">HEMOTIPO</label>
-                                                    <div class="col-12">
-                                                        <label for="example-text-input" class="col-form-label">{{expediente.hemotipohistorial}}</label>
-                                                    </div>
-                                                </div>                        
-                                                <div class="form-group row">
-                                                    <label for="example-search-input" class="col-12 col-form-label">ALERGIAS</label>
-                                                    <div class="col-12">
-                                                        <label for="example-text-input" class="col-form-label">{{expediente.alergiashistorial}}</label>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="example-search-input" class="col-12 col-form-label">ANTECEDENTES PERSONALES PATOLOGICOS</label>
-                                                    <div class="col-12">
-                                                        <label for="example-text-input" class="col-form-label">{{expediente.apphistorial}}</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="example-search-input" class="col-12 col-form-label">CITA PROXIMA</label>
-                                                <div class="col-10">
-                                                    <label for="example-text-input" class="col-form-label">{{expediente.citahistorial}}</label>
-                                                </div>
-                                            </div>    
+                                            <hr>
                                             <div class="table-responsive-lg">
                                                 <table class="table"  >
                                                     <thead >
@@ -419,17 +380,25 @@
                                                     </thead>
                                                     <tbody>
                                                         <tr class="col-12">
-                                                            <td ><label for="example-search-input" class="col-12 col-form-label">{{expediente.diagnostico}}</label></td>
+                                                            <td ><label for="example-search-input" class="col-12 col-form-label">{{datosReceta.diagnostico}}</label></td>
                                                         </tr>                            
                                                     </tbody>
-                                                </table>  
-                                                <div class="col-md-6 mb-5 d-flex justify-content-center">
-                                                    <img [src]="croppedImage" class="img-fluid"/>
-                                                </div>  
+                                                </table>
+                                            </div>  
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-md-6 align-self-center">
+                                                    <h4>Col. Isidro Fabela, México</h4>
+                                                </div>
+                                                <div class="col-md-6 align-self-center">
+                                                    <h4>Teléfono: {{datosReceta.teldoctor}}</h4>
+                                                </div>
+                                            </div>
+                                        </div>
                                                 <div class="col-md-12 mt-5 d-flex justify-content-center">
                                                     <button type="button" (click)="imprimirReceta()" class="btn btn-primary">Imprimir Receta</button>                                                                              
-                                                </div>                                                                   
-                                            </div> 
+                                                                                                                 
+                                            
                                         </div>                                                                                                    
                                         </div>               
                                     </div>
