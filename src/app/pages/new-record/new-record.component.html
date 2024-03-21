@@ -107,23 +107,23 @@
                                     </div>
                                     <div class="col-md-6 mb-5 d-flex justify-content-center" *ngIf="imageChangedEvent">
                                         <image-cropper
-                                        [imageChangedEvent]="imageChangedEvent"
-                                        [maintainAspectRatio]="true"
-                                        [aspectRatio]="1 / 1"
-                                        format="png"
-                                        [containWithinAspectRatio]="true"
-                                        [cropperMinWidth]="5"
-                                        [cropperMinHeight]="5"
-                                        [canvasRotation]="0"
-                                        (imageCropped)="imageCropped($event)"
-                                        [hideResizeSquares]="false"
-                                        [transform]="transform">
-                                    </image-cropper>
+                                            [imageChangedEvent]="imageChangedEvent"
+                                            [maintainAspectRatio]="true"
+                                            [aspectRatio]="1 / 1"
+                                            format="png"
+                                            [containWithinAspectRatio]="true"
+                                            [cropperMinWidth]="5"
+                                            [cropperMinHeight]="5"
+                                            [canvasRotation]="0"
+                                            (imageCropped)="imageCropped($event)"
+                                            [hideResizeSquares]="false"
+                                            [transform]="transform">
+                                        </image-cropper>
                                     </div>                                                            
                                     <div class="col-md-6 mb-5 d-flex justify-content-center">
                                         <img [src]="croppedImage" 
-                                        *ngIf="imageChangedEvent"
-                                        class="img-fluid" />
+                                            *ngIf="imageChangedEvent"
+                                            class="img-fluid"/>
                                     </div>                               
                                 </div>
                             </div>     

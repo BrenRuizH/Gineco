@@ -29,7 +29,6 @@
                 </ul>
                 <ul class="navbar-nav my-lg-0">
                     <li class="nav-item dropdown">
-
                         <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img src="../assets/assets/images/users/1.jpg" alt="user" class="profile-pic" />
                         </a>
@@ -44,10 +43,12 @@
                                     <ul aria-expanded="false">
                                         <li *ngFor="let subitem of item.submenu">
                                             <a 
-                                            [routerLink]="subitem.url"
-                                            routerLinkActive="active"
-                                            [routerLinkActiveOptions]="{exact: true}"
-                                            >{{subitem.title}} </a>
+                                                [routerLink]="subitem.url"
+                                                routerLinkActive="active"
+                                                [routerLinkActiveOptions]="{exact: true}"
+                                            >
+                                                {{subitem.title}}
+                                            </a>
                                         </li>
                                     </ul>
                                 </li>
@@ -55,7 +56,7 @@
                                 <li>
                                     <a class="cursor" (click)="logout();">
                                         <i class="fa fa-power-off"></i>
-                                    Salir
+                                        Salir
                                     </a>
                                 </li>  
                             </ul>
@@ -77,10 +78,12 @@
                         <ul aria-expanded="false" class="collapse">
                             <li *ngFor="let subitem of item.submenu">
                                 <a 
-                                [routerLink]="subitem.url"
-                                routerLinkActive="active"
-                                [routerLinkActiveOptions]="{exact: true}"
-                                >{{subitem.title}} </a>
+                                    [routerLink]="subitem.url"
+                                    routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{exact: true}"
+                                >
+                                    {{subitem.title}}
+                                </a>
                             </li>
                         </ul>
                     </li>
