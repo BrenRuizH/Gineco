@@ -76,4 +76,8 @@ export class PatientsService {
   seleccionarDoctor(iddoctor: any) {
     return this.http.get(`${this.url}SeleccionarDoctor.php?iddoctor=${iddoctor}`);
   }
+
+  editarDoctor(iddoctor: any) {
+    return this.http.post(`${this.url}EditarDoctor.php`, JSON.stringify(iddoctor));
+  }
 }
