@@ -68,4 +68,8 @@ export class PatientsService {
   seleccionarReceta(idhistorial: any) {
     return this.http.get(`${this.url}SeleccionarReceta.php?idhistorial=${idhistorial}`);
   }
+
+  obtenerDoctores() {
+    return this.http.get(`${this.url}ObtenerDoctores.php`);
+  }
 }
