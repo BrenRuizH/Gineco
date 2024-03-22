@@ -12,6 +12,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { FiltrarTablaPipe } from '../pipes/filtrar-tabla.pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -31,7 +32,8 @@ import { FiltrarTablaPipe } from '../pipes/filtrar-tabla.pipe';
     CommonModule,
     RouterModule,
     FormsModule,
-    ImageCropperModule
+    ImageCropperModule,
+    NgxPaginationModule
   ]
 })
 export class PagesModule { }
