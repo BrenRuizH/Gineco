@@ -17,14 +17,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let historiales of newHistoriales | filtrarTabla: filtrarNombre">
+                    <tr *ngFor="let historiales of newHistoriales | filtrarTabla: filtrarNombre | paginate: {itemsPerPage: 10, currentPage: p}">
                         <td>{{historiales.nompaciente}}</td>                                                                                        
                         <td> 
-                            <a (click)="verExpediente(historiales.idpaciente);" class="btn btn-success" ><i class="fa fa-eye"></i></a>
+                            <a (click)="verExpediente(historiales.idpaciente);" class="btn btn-success">
+                                <i class="fa fa-eye"></i>
+                            </a>
                         </td>
                     </tr>                                        
                 </tbody>
             </table>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
         </div>                     
     </div>
 </div>

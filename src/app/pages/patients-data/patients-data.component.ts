@@ -13,6 +13,7 @@ export class PatientsDataComponent implements OnInit{
   paciente: any = {};
 
   filtrarNombre: any = '';
+  p: number = 1;
 
   constructor(private patientsService: PatientsService) {
     this.obtenerPactientes();
