@@ -10,6 +10,7 @@ import { PatientsService } from 'src/app/services/patients.service';
 export class PatientsRecordComponent implements OnInit{
 
   newHistoriales: any[] = [];
+  filtrarNombre: any = '';
 
   constructor(public patientService: PatientsService, private router: Router) {}
 

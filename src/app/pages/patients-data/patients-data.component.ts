@@ -12,6 +12,8 @@ export class PatientsDataComponent implements OnInit{
   pacientes: any = [];
   paciente: any = {};
 
+  filtrarNombre: any = '';
+
   constructor(private patientsService: PatientsService) {
     this.obtenerPactientes();
   }

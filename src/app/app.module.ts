@@ -5,12 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
 import { FormsModule } from '@angular/forms';
-import { FiltrarTablaPipe } from './pipes/filtrar-tabla.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    FiltrarTablaPipe
+    AppComponent
   ],
   imports: [
     BrowserModule,

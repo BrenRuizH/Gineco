@@ -11,6 +11,7 @@ import { NewRecordComponent } from './new-record/new-record.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ImageCropperModule } from 'ngx-image-cropper';
+import { FiltrarTablaPipe } from '../pipes/filtrar-tabla.pipe';
 
 
 
@@ -23,7 +24,8 @@ import { ImageCropperModule } from 'ngx-image-cropper';
     PatientsDataComponent,
     RecordComponent,
     PatientsRecordComponent,
-    NewRecordComponent
+    NewRecordComponent,
+    FiltrarTablaPipe
   ],
   imports: [
     CommonModule,
