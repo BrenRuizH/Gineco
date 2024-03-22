@@ -31,7 +31,7 @@
                                         <td>{{data.cedoctor}}</td>
                                         <td>{{data.espedoctor}}</td>
                                         <td> 
-                                            <a  class="btn btn-warning" data-toggle="modal" data-target=".example2-modal-lg">
+                                            <a (click)="seleccionarDoctor(data.iddoctor)" class="btn btn-warning" data-toggle="modal" data-target=".example2-modal-lg">
                                                 <i class="fa fa-edit"></i>
                                             </a>
                                         </td>                                        

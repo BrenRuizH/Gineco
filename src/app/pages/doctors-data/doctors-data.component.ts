@@ -9,6 +9,8 @@ import { PatientsService } from 'src/app/services/patients.service';
 export class DoctorsDataComponent implements OnInit {
   
   doctor: any[] = [];
+  docto = {};
+
   constructor(private pacienteService: PatientsService) {}
 
   ngOnInit(): void {
@@ -21,4 +23,14 @@ export class DoctorsDataComponent implements OnInit {
         this.doctor = resp;
       })
   }
+
+  seleccionarDoctor(iddoctor: any) {
+    this.pacienteService.seleccionarDoctor(iddoctor)
+      .subscribe((resp: any) => {
+        this.docto = resp[0];
+        console.log(this.docto);
+      })
+  }
+
+  editarDoctor() {}
 }

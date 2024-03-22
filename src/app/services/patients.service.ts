@@ -72,4 +72,8 @@ export class PatientsService {
   obtenerDoctores() {
     return this.http.get(`${this.url}ObtenerDoctores.php`);
   }
+
+  seleccionarDoctor(iddoctor: any) {
+    return this.http.get(`${this.url}SeleccionarDoctor.php?iddoctor=${iddoctor}`);
+  }
 }
