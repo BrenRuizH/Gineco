@@ -65,7 +65,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label">Nombre completo</label>
-                                                        <input type="text"  class="form-control"  placeholder="Pedro Pablo" >
+                                                        <input type="text"  class="form-control" name="nomdoctor" [(ngModel)]="docto.nomdoctor" placeholder="Pedro Pablo" >
                                                     </div>
                                                 </div>
                                             </div>
@@ -73,19 +73,19 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label>Teléfono</label>
-                                                        <input type="text"   class="form-control"   placeholder="(999) 999-9999">
+                                                        <input type="text"   class="form-control" name="teldoctor" [(ngModel)]="docto.teldoctor" placeholder="(999) 999-9999">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label">Cedula Profesional</label>
-                                                        <input type="text"  class="form-control"   placeholder="Profesional">
+                                                        <input type="text"  class="form-control" name="cedoctor" [(ngModel)]="docto.cedoctor" placeholder="Profesional">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="control-label">Especialidad</label>
-                                                        <input type="text"  class="form-control" placeholder="Especialidad">
+                                                        <input type="text"  class="form-control" name="espedoctor" [(ngModel)]="docto.espedoctor" placeholder="Especialidad">
                                                     </div>
                                                 </div>
                                             </div>
